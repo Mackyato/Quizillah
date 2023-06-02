@@ -95,6 +95,28 @@ try {
             -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
             transform: scale(1.5);
         }
+        .next {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            height: 50px;
+            width: 196px;
+            font-size: 20px;
+            position: relative;
+            left:  46%;
+            top: -93.5%;
+        }
+
+        .next:hover {
+            background-color: #3e8e41;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+            transform: translate(2px, 2px);
+        }
         .kwesyun{
             font-size: 30px;
         }
@@ -111,7 +133,9 @@ try {
             height: 50px;
             width: 196px;
             font-size: 20px;
-            position: absolute;
+            position: relative;
+            left: 26%;
+            top: 20%;
         }
 
         .b_button:hover {
@@ -134,44 +158,22 @@ try {
             transform: translateX(-20px);
         }
 
-        .next {
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            height: 50px;
-            width: 196px;
-            font-size: 20px;
-            position: relative;
-            left:  61%
-        }
-
-        .next:hover {
-            background-color: #3e8e41;
-            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-            transform: translate(2px, 2px);
-        }
-
-        .BOBOB{
-            margin-top: -529px;
-            margin-right: -76px;
-            position: relative;
-        }
 
         </style>
     </head>
     <div>
-        <form method="POST" action="back_button.php">
+        <form method="POST" action="back_button.php" class="rel">
             <input type="hidden" name="selected_answer" value="<?php echo isset($_SESSION['answers'][$number]) ? $_SESSION['answers'][$number] : ''; ?>" />   
+            
             <button type="submit" name="back" value="true" class="b_button">  
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" 
+                viewBox="0 0 16 16"> 
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 
+                .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
                 </svg>
                     <span>Back</span>
             </button>
+
         </form>
     </div>
     <body class="bodi">
@@ -193,11 +195,7 @@ try {
                                 <?php echo $choice->label; ?>
                             </div>
                 <?php endforeach; ?>
-
-                <div>
-                    <form class="BOBOB">
                     <input type="submit" value="Next Question" class="next">
-                    </form>
                 </div>
             </form>
         </div>
