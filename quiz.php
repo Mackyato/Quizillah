@@ -196,7 +196,7 @@ try {
                             </div>
                 <?php endforeach; ?>
                     <input type="submit" value="Next Question" class="next">
-                </div>
+                </div>z
             </form>
         </div>
     </body>

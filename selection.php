@@ -22,12 +22,14 @@ if (!isset($_SESSION['is_logged_in']) || !$_SESSION['is_logged_in']) {
     </head>
     
     <body class="bg">
+     <div>   
+     <img src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81plKcfkmbHst7nWroCaJaMaMIGHym8TZ7H9WiQ_AvDpzKsRiNV3biT0oueitHBPr7fP8L-uuDhnuxcmR3GykTObE3pDMg=s1600"
+                width="1029" height="500">
         <form method="POST" action="selection_post.php" id="selection" class="select">
-
             <div style="position: relative; display: inline-block;">
                 <img src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81qTLWWAMPBPKUk1AdEccp2yP-dLWOoqvVOxahMUjW-D6Sdg5TRJe8kbFVwEjMWmQ79X2ALTLBpdV5XfSF9Tvb_akU5i3A=s2560"
                 width="200" height="400">
-                <button type="submit" Name="topic" Value= "Contemporary_World" class="button_type1" style="position: absolute; top: 85%; left: 50%; transform: translate(-50%, -50%);">
+                <button type="submit" Name="topic" Value= "Contemporary_World" class="button_type1" style="position: absolute; top: 85%0%; left: 50%; transform: translate(-50%, -50%);">
                     <span class="btn-txt">Contemporary World</span>
                 </button>
             </div>
@@ -70,5 +72,6 @@ if (!isset($_SESSION['is_logged_in']) || !$_SESSION['is_logged_in']) {
             </div>
 
         </form>
+</div>
     </body>
 </html>
