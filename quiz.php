@@ -64,18 +64,22 @@ try {
             padding: 10px;
             margin: 0px;
             max-width: 1085px; /* set a maximum width */
+            width: 1085px;
             height: 650px;
-            background-image: url('https://lh3.googleusercontent.com/drive-viewer/AFGJ81oFCJykTM1tzAv5m5KJDd8VpE2h4GFvfJD94RRe8lJaOVV7fbSkxvBqW1mU4_Ari2BNUerx78_yfyCBVTSPOTmUh2qQ=s1600');
+            background-image: url('images/QuizFrame.png');
             background-size: cover;
-            margin-top: 25px;
+            margin-top: 17px;
             position: relative;
+            
         }
         .bodi{
             background-color: #94ecf7;
+            position: relative;
         }
         div.quiz{
             display: flex;
             align-items: center;
+            
         }
 
         input[type="radio"] {
@@ -94,6 +98,7 @@ try {
             -ms-transform: scale(1.5); /* IE 9 */
             -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
             transform: scale(1.5);
+            
         }
         .next {
             background-color: #4CAF50;
@@ -107,9 +112,10 @@ try {
             height: 50px;
             width: 196px;
             font-size: 20px;
-            position: relative;
-            left:  46%;
-            top: -93.5%;
+            position: absolute;
+            left: 80%;
+            top: -10%;
+            z-index: 5;
         }
 
         .next:hover {
@@ -134,8 +140,9 @@ try {
             width: 196px;
             font-size: 20px;
             position: relative;
-            left: 26%;
-            top: 20%;
+            left: 22%;
+            top: 10%;
+            margin-top: 10px;
         }
 
         .b_button:hover {
@@ -195,14 +202,17 @@ try {
                                 <?php echo $choice->label; ?>
                             </div>
                 <?php endforeach; ?>
-                    <input type="submit" value="Next Question" class="next">
-                </div>z
+                    <?php if ($_SESSION["current_question_number"] < 10){ 
+                        echo "<input type='submit' value='Next Question' class='next'>";
+                    } else {
+                        echo "<input type='submit' value='Finish' class='next'>";
+                    }?>
             </form>
         </div>
     </body>
 </html>
 
 <?php 
-//var_dump($_SESSION)
+var_dump($_SESSION)
 ?>
 
