@@ -19,7 +19,7 @@ if (isset($_SESSION['is_logged_in'])) {
 		<link rel="stylesheet" href="style.css">	
 	</head>
 	
-	<body>
+	<body class="login_body">
 		<div class="container">
 			<form action="attempt-login.php" method="POST">
 				<div align="center">
@@ -27,14 +27,14 @@ if (isset($_SESSION['is_logged_in'])) {
 						alt="quizillah" width="500" height="245">
 				</div>
 				<h3 class="head3" align="center">Login Page</h3>
-				<div align="center">
-					<input type="email" name="email" placeholder="email@address.com" class="email"/>	
+				<div align="left">
+					<input type="email" name="email" placeholder="email@address.com" class="email" size="50"/>	
 				</div>
 
 				<div class="divider"> </div>
 
 				<div align="center">
-					<input type="password" name="password" class="pass"/>	
+					<input type="password" name="password" placeholder="password" class="pass"/>	
 				</div>
 
 				<div align="center">
@@ -49,5 +49,6 @@ if (isset($_SESSION['is_logged_in'])) {
 				</div>
 			</form>
 		</div>
+		<a href="about_us.php" class="about_us"><b>ABOUT US</b></a>	
 	</body>
 </html>

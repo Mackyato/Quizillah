@@ -10,7 +10,9 @@ session_destroy();
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Registration</title>
+			<title>
+				Registration
+			</title>
 		<link rel="stylesheet" href="style.css">
 	</head>
 	
@@ -50,16 +52,16 @@ session_destroy();
 			<hr class="divider4" align="center">
 
 			<div class="form-section" align="center">
-				<p>Have an account? <a href="login.php">Log in</a> </p>
+				<p style="font-size: 15px;">Have an account? <a href="login.php">Log in</a> </p>
 			</div>
 		</form>
 			<div class="vl"></div>
 			<div class="vl1"></div>
 			
 	</body>
-	<div class="about">
-				<a href="about_us.php" style="color: yellow;font-size: 25px;">About us</a> 
-	</div>
+		<div class="about">
+					<a href="about_us.php" style="color: yellow;font-size: 25px;">About us</a> 
+		</div>
 </html>
 
         

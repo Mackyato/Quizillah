@@ -1,4 +1,20 @@
+<!DOCTYPE html>
 <html>
+  <head>
+      <title>
+        Leaderboards
+      </title>
+      <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="body_res">
+      <div>
+      <img class="logo" src="images/LEADERBOARD_LOGO.png">
+      </div>
+      
+      <div>
+      <img class="crown" src="images/CROWN_LEADERBOARD.png">
+      </div>
+  </body>
 <?php
 require "config.php";
 use App\Score;
@@ -8,22 +24,29 @@ if (!isset($_SESSION['dropdown'])) {
 }
 $selectedSubject = $_SESSION['dropdown'];
 ?>
-<form action="leaderboard_process.php" method="post" id="myForm">
-  <select id="Dropdown" name="Dropdown" onchange="submitForm()">
-    <option value="Contemporary_World" <?php if ($selectedSubject === 'Contemporary_World') echo 'selected'; ?>>Contemporary World</option>
-    <option value="Ethics" <?php if ($selectedSubject === 'Ethics') echo 'selected'; ?>>Ethics</option>
-    <option value="UTS" <?php if ($selectedSubject === 'UTS') echo 'selected'; ?>>UTS</option>
-  </select>
-</form>
+<br><br><br><br><br><br>
+
+    <form action="leaderboard_process.php" method="post" id="myForm">
+      <select id="Dropdown" name="Dropdown" onchange="submitForm()">
+        <option value="Contemporary_World" <?php if ($selectedSubject === 'Contemporary_World') echo 'selected'; ?>>Contemporary World</option>
+        <option value="Ethics" <?php if ($selectedSubject === 'Ethics') echo 'selected'; ?>>Ethics</option>
+        <option value="Ccs05" <?php if ($selectedSubject === 'Ccs05') echo 'selected'; ?>>CCS05</option>
+        <option value="Ccs06" <?php if ($selectedSubject === 'Ccs06') echo 'selected'; ?>>CCS06</option>
+        <option value="Ite" <?php if ($selectedSubject === 'Ite') echo 'selected'; ?>>ITE</option>
+      </select>
+    </form>
+    
+    <h2 align="center" class="lb-res">LEADERBOARDS </h2>
 
 <?php
 $leaderboard = Score::list();
 
-echo "<table border='1' cellpadding='5'>";
+echo "<table border='1' cellpadding='5' class='tb-res'>";
 echo "<tr>";
-    echo "<th>Username</th>";
-    echo "<th>Subject</th>";
-    echo "<th>Score</th>";
+    echo "<th class='th-res'>Username</th>";
+    echo "<th class='th-res'>Subject</th>";
+    echo "<th class='th-res'>Score</th>";
+    echo "<th class='th-res'>Saved_at</th>";
 echo "</tr>";
 foreach($leaderboard as $data){
     echo "<tr>";
@@ -45,3 +68,5 @@ function submitForm() {
     document.getElementById('myForm').submit();
   }
 </script>
+
+</html>
